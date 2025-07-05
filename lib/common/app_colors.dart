@@ -8,4 +8,6 @@ class AppColors {
   static const highlightColor = Color(0xFFFFFFFF);
   static const textW = Color(0xFFFFFFFF);
   static const textBk = Color(0xFF000000);
+  static const textButton = Color(0xFF1C1A73);
+  static const texthint = Colors.grey;
 }
