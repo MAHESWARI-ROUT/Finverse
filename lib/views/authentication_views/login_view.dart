@@ -1,10 +1,12 @@
 import 'package:finverse/controllers/password_controller.dart';
-import 'package:finverse/models/app_colors.dart';
-import 'package:finverse/models/device_utilities.dart';
-import 'package:finverse/models/fonts.dart';
+
 import 'package:finverse/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../common/app_colors.dart';
+import '../../common/device_utilities.dart';
+import '../../common/fonts.dart';
 
 class LoginView extends GetView {
   const LoginView({super.key});

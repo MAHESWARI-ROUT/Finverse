@@ -1,10 +1,11 @@
 import 'package:finverse/controllers/password_controller.dart';
-import 'package:finverse/models/app_colors.dart';
-import 'package:finverse/models/device_utilities.dart';
-import 'package:finverse/models/fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
+
+import '../common/app_colors.dart';
+import '../common/device_utilities.dart';
+import '../common/fonts.dart';
 
 class CustomTextField extends StatelessWidget {
   final String hintText;

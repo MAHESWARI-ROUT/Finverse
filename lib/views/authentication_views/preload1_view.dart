@@ -1,7 +1,8 @@
-import 'package:finverse/models/app_colors.dart';
-import 'package:finverse/models/fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
+
+import '../../common/app_colors.dart';
+import '../../common/fonts.dart';
 
 class Preload1Screen extends GetView {
   const Preload1Screen({super.key});
