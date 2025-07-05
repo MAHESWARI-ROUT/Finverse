@@ -13,5 +13,13 @@ class Fonts {
     fontFamily: 'Montserrat',
     fontWeight: FontWeight.w300,
   );
+  static const montserratSemiBold = TextStyle(
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.w600,
+  );
+  static const montserratExtraLight = TextStyle(
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.w200,
+  );
   static const gilroy = TextStyle(fontFamily: 'gilroy');
 }

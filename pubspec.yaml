@@ -62,7 +62,7 @@ flutter:
 assets:
   #- assets/fonts
   - assets/images
-
+  - assets/questions/questions.json
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
@@ -85,6 +85,12 @@ fonts:
           style: normal
         - asset: assets/fonts/Montserrat-Light.ttf
           weight: 300
+          style: normal
+        - asset: assets/fonts/FontsFree-Net-Montserrat-SemiBold.ttf
+          weight: 600
+          style: normal
+        - asset: assets/fonts/FontsFree-Net-Montserrat-ExtraLight.ttf
+          weight: 200
           style: normal
 
   - family: gilroy

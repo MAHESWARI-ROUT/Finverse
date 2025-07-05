@@ -3,6 +3,7 @@ import 'package:finverse/views/authentication_views/login_view.dart';
 import 'package:finverse/views/authentication_views/preload1_view.dart';
 import 'package:finverse/views/authentication_views/preload2_view.dart';
 import 'package:finverse/views/authentication_views/signup_view.dart';
+import 'package:finverse/views/question_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Preload2Screen(),
+      home: QuestionView(),
     );
   }
 }
