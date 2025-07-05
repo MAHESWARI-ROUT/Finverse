@@ -1,4 +1,3 @@
-import 'package:finverse/models/fonts.dart';
 import 'package:finverse/views/authentication_views/login_view.dart';
 import 'package:finverse/views/authentication_views/preload1_view.dart';
 import 'package:finverse/views/authentication_views/preload2_view.dart';

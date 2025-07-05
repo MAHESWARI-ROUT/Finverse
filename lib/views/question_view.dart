@@ -1,8 +1,10 @@
-import 'package:finverse/models/app_colors.dart';
-import 'package:finverse/models/device_utilities.dart';
-import 'package:finverse/models/fonts.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../common/app_colors.dart';
+import '../common/device_utilities.dart';
+import '../common/fonts.dart';
 
 class QuestionView extends GetView {
   const QuestionView({super.key});
