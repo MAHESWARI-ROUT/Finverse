@@ -49,5 +49,45 @@
       "I want to know more about it."
     ]
 
+  },
+  {
+    "questionText": "How do you currently assess and manage financial risks?",
+    "options": [
+      "Proactively Manage Risks",
+      "Manage risks as they arise",
+      "Neutral",
+      "Rarely consider risks",
+      "No risk management strategy"
+    ]
+  },
+  {
+    "questionText": "How frequently do you follow financial news and market trends?",
+    "options": [
+      "Daily",
+      "Weekly",
+      "Occasionally",
+      "Rarely",
+      "Never"
+    ]
+  },
+  {
+    "questionText": "What steps have you taken for retirement planning?",
+    "options": [
+      "Comprehensive plan in place",
+      "Started planning",
+      "Considering options",
+      "No specific plan",
+      "Not started planning"
+    ]
+  },
+  {
+    "questionText": "How would you rate your knowledge of debt repayment strategies?",
+    "options": [
+      "Very knowledgeable",
+      "Knowledgeable",
+      "Average",
+      "Limited",
+      "No knowledge"
+    ]
   }
 ]

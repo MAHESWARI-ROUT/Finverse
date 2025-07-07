@@ -21,5 +21,12 @@ class Fonts {
     fontFamily: 'Montserrat',
     fontWeight: FontWeight.w200,
   );
-  static const gilroy = TextStyle(fontFamily: 'gilroy');
+  static const gilroy = TextStyle(
+    fontFamily: 'gilroy',
+    fontWeight: FontWeight.w400,
+  );
+  static const gilroySemiBold = TextStyle(
+    fontFamily: 'gilroy',
+    fontWeight: FontWeight.w600,
+  );
 }

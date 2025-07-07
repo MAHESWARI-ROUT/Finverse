@@ -1,4 +1,5 @@
 
+import 'package:finverse/controllers/question_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -6,12 +7,15 @@ import '../common/app_colors.dart';
 import '../common/device_utilities.dart';
 import '../common/fonts.dart';
 
-class QuestionView extends GetView {
+class QuestionView extends GetView<QuestionController> {
   const QuestionView({super.key});
+  //final QuestionController controller = Get.put(QuestionController()); //if statelessWidget will be used
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Obx(() {
+      final question = controller.questions[controller.currentIndex.value];
+      return Scaffold(
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -101,6 +105,6 @@ class QuestionView extends GetView {
           ),
         ),
       ),
-    );
+    );});
   }
 }
