@@ -59,8 +59,7 @@ class QuestionContainer extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Row(
-                        children: [
-                          
+                        children: [             
                           Icon(Icons.circle_outlined,size: 12,color: AppColors.texthint,),
                           SizedBox(width: 5,),
                           Text(
