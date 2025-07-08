@@ -60,10 +60,10 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-assets:
-  - assets/fonts
-  - assets/images
-
+  assets:
+    - assets/fonts/
+    - assets/images/
+    - assets/questions/questions.json
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
@@ -75,9 +75,9 @@ assets:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-fonts:
-     - family: Montserrat
-       fonts:
+  fonts:
+    - family: Montserrat
+      fonts:
          - asset: assets/fonts/Montserrat-Regular.ttf
            style: normal
            weight: 400
@@ -92,9 +92,12 @@ fonts:
            weight: 200
          - asset: assets/fonts/FontsFree-Net-Montserrat-ExtraBold.ttf
            style: normal
-           weight: 800   
-     - family: gilroy
-       fonts:
+           weight: 800 
+         - asset: assets/fonts/Montserrat Bold.ttf
+           style: normal
+           weight: 700  
+    - family: gilroy
+      fonts:
          - asset: assets/fonts/gilroy-regular.ttf
            style: normal
            weight: 400

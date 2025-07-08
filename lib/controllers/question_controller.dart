@@ -15,19 +15,22 @@ class QuestionController extends GetxController {
   }
 
   Future<void> loadQuestions() async {
-    final String response = await rootBundle.loadString(
-      'assets/questions/questions.json',
-    );
+  try {
+    final String response = await rootBundle.loadString('assets/questions/questions.json');
+    print("Loaded JSON: $response");
     final List<dynamic> data = jsonDecode(response);
-    questions.value = data
-        .map(
-          (q) => Questions(
-            questionsText: q['questionText'],
-            options: List<String>.from(q['options']),
-          ),
-        )
-        .toList();
+    questions.value = data.map(
+      (q) => Questions(
+        questionsText: q['questionText'],
+        options: List<String>.from(q['options']),
+      ),
+    ).toList();
+    print("Loaded ${questions.length} questions");
+  } catch (e) {
+    print("❌ Error loading questions: $e");
   }
+}
+
 
   void nextQuestion() {
     if (currentIndex.value < questions.length - 1) {

@@ -1,12 +1,12 @@
-import 'package:finverse/views/authentication_views/login_view.dart';
-import 'package:finverse/views/authentication_views/preload1_view.dart';
-import 'package:finverse/views/authentication_views/preload2_view.dart';
-import 'package:finverse/views/authentication_views/signup_view.dart';
+import 'package:finverse/controllers/question_controller.dart';
+
 import 'package:finverse/views/question_view.dart';
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
+import 'package:get/get.dart';
 
 void main() {
+   WidgetsFlutterBinding.ensureInitialized();
+  Get.put(QuestionController());
   runApp(const MyApp());
 }
 

@@ -39,17 +39,7 @@
     ]
 
   },
-  {
-    "questionText": "Do you know about emergency funds?",
-    "options": [
-      "Yes, and it covers at least 1 month of living expenses.",
-      "Yes, and it covers at least 3 months of living expenses.",
-      "No, I don’t think it’s necessary.",
-      "No, and I haven’t considered it.",
-      "I want to know more about it."
-    ]
-
-  },
+  
   {
     "questionText": "How do you currently assess and manage financial risks?",
     "options": [

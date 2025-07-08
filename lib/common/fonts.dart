@@ -13,6 +13,10 @@ class Fonts {
     fontFamily: 'Montserrat',
     fontWeight: FontWeight.w300,
   );
+  static const montserratBold = TextStyle(
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.w700,
+  );
   static const montserratSemiBold = TextStyle(
     fontFamily: 'Montserrat',
     fontWeight: FontWeight.w600,
