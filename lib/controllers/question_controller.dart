@@ -11,6 +11,8 @@ class QuestionController extends GetxController {
   @override
   void onInit() {
     loadQuestions();
+    nextQuestion();
+    previousQuestion();
     super.onInit();
   }
 

@@ -12,6 +12,7 @@ class AppColors {
   static const texthint = Colors.grey;
   static const optionBox = Color(0xFFF9F9FE);
   static const blurColor = Color(0xFFE9E2E7);
+  static const blurText = Color(0xFF4D4949);
   
 
 }

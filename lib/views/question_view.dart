@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:finverse/common/app_colors.dart';
 import 'package:finverse/common/device_utilities.dart';
 import 'package:finverse/common/fonts.dart';
@@ -15,9 +17,7 @@ class QuestionView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(() {
       if (controller.questions.isEmpty) {
-        return const Scaffold(
-          body: Center(child: CircularProgressIndicator()),
-        );
+        return const Scaffold(body: Center(child: CircularProgressIndicator()));
       }
 
       final question = controller.questions[controller.currentIndex.value];
@@ -69,7 +69,9 @@ class QuestionView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: DeviceUtilities.screenHeight(context) * 0.03),
+                  SizedBox(
+                    height: DeviceUtilities.screenHeight(context) * 0.03,
+                  ),
                   Align(
                     alignment: Alignment.topLeft,
                     child: Text(
@@ -91,12 +93,10 @@ class QuestionView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 0,),
+                  SizedBox(height: 0),
                   Align(
-                    
                     alignment: Alignment.topLeft,
                     child: Text(
-                      
                       'for curated courses!',
                       style: Fonts.montserratSemiBold.copyWith(
                         fontSize: 20,
@@ -104,22 +104,78 @@ class QuestionView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: DeviceUtilities.screenHeight(context) * 0.06),
+                  SizedBox(
+                    height: DeviceUtilities.screenHeight(context) * 0.03,
+                  ),
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Text.rich(
+                      TextSpan(
+                        children: [
+                          TextSpan(
+                            text: 'Question: ',
+                            style: Fonts.gilroy.copyWith(
+                              color: AppColors.textW,
+                              fontSize: 12,
+                            ),
+                          ),
+                          TextSpan(
+                            text:
+                                '${controller.currentIndex.value + 1} / ${controller.totalQuestions}',
+                            style: Fonts.gilroy.copyWith(
+                              color: AppColors.textW,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 5),
                   LinearProgressIndicator(
-                    value: controller.currentIndex.value / controller.totalQuestions,
+                    value:
+                        controller.currentIndex.value /
+                        controller.totalQuestions,
                     minHeight: 5,
                     color: AppColors.highlightColor,
                     backgroundColor: Colors.white38,
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  SizedBox(height:DeviceUtilities.screenHeight(context) * 0.05),
+                  SizedBox(
+                    height: DeviceUtilities.screenHeight(context) * 0.05,
+                  ),
                   QuestionContainer(
                     question: question.questionsText,
-                    options: question.options,
+                    options: question.options, 
+                    onNext: controller.nextQuestion,
+                    onPrev: controller.previousQuestion,
                   ),
-                  SizedBox(height: 10,),
-                  Text('Swipe left or right to check more '),
-                  SizedBox(height: 10,),
+                  SizedBox(height: 10),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 40, sigmaY: 40),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          //borderRadius: BorderRadius.circular(20),
+                          color: Color.fromRGBO(255, 255, 255, 0.16),
+                          border: Border.all(
+                            color: Color.fromRGBO(255, 255, 255, 0.16),
+                          ),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left:10.0,right: 10),
+                          child: Text(
+                            'Swipe left or right to check more ',
+                            style: Fonts.montserrat.copyWith(
+                              color: AppColors.blurText,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20),
                 ],
               ),
             ),
