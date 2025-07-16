@@ -134,7 +134,7 @@ class QuestionView extends StatelessWidget {
                   SizedBox(height: 5),
                   LinearProgressIndicator(
                     value:
-                        controller.currentIndex.value /
+                        (controller.currentIndex.value + 1) /
                         controller.totalQuestions,
                     minHeight: 5,
                     color: AppColors.highlightColor,
@@ -146,35 +146,112 @@ class QuestionView extends StatelessWidget {
                   ),
                   QuestionContainer(
                     question: question.questionsText,
-                    options: question.options, 
+                    options: question.options,
+                    selectedOption: question.selectedOption,
                     onNext: controller.nextQuestion,
                     onPrev: controller.previousQuestion,
+                    currentIndex: controller.currentIndex.value,
+                    questionlength: controller.totalQuestions,
+                    onOptionSelected: controller.selectOption,
                   ),
-                  SizedBox(height: 10),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: BackdropFilter(
-                      filter: ImageFilter.blur(sigmaX: 40, sigmaY: 40),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          //borderRadius: BorderRadius.circular(20),
-                          color: Color.fromRGBO(255, 255, 255, 0.16),
-                          border: Border.all(
+                  SizedBox(height: 20),
+                  if (controller.currentIndex.value + 1 <
+                      controller.totalQuestions)
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(sigmaX: 40, sigmaY: 40),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            //borderRadius: BorderRadius.circular(20),
                             color: Color.fromRGBO(255, 255, 255, 0.16),
+                            border: Border.all(
+                              color: Color.fromRGBO(255, 255, 255, 0.16),
+                            ),
                           ),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(left:10.0,right: 10),
-                          child: Text(
-                            'Swipe left or right to check more ',
-                            style: Fonts.montserrat.copyWith(
-                              color: AppColors.blurText,
+                          child: Padding(
+                            padding: const EdgeInsets.only(
+                              left: 10.0,
+                              right: 10,
+                            ),
+                            child: Text(
+                              'Swipe left or right to check more ',
+                              style: Fonts.montserrat.copyWith(
+                                color: AppColors.blurText,
+                              ),
                             ),
                           ),
                         ),
                       ),
                     ),
-                  ),
+                  if (controller.currentIndex.value + 1 ==
+                      controller.totalQuestions)
+                    Row(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 40, sigmaY: 40),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                //borderRadius: BorderRadius.circular(20),
+                                color: Color.fromRGBO(255, 255, 255, 0.16),
+                                border: Border.all(
+                                  color: Color.fromRGBO(255, 255, 255, 0.16),
+                                ),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 10.0,right: 10.0),
+                                child: GestureDetector(
+                                  onTap: controller.restart,
+                                  child: Text(
+                                    'Start Over? ',
+                                    style: Fonts.montserrat.copyWith(
+                                      color: AppColors.blurText,
+                                      fontSize: 12
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Spacer(),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 40, sigmaY: 40),
+                            child: Container(
+                             
+                              decoration: BoxDecoration(
+                                //borderRadius: BorderRadius.circular(20),
+                                color: Color.fromRGBO(255, 255, 255, 0.56),
+                                border: Border.all(
+                                  color: Color.fromRGBO(255, 255, 255, 0.56),
+                                ),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                 
+                                  right: 10,
+                                  left: 10
+                                ),
+                                child: GestureDetector(
+                                  onTap: (){},
+                                  child: Text(
+                                    'Submit ',
+                                    style: Fonts.montserratBold.copyWith(
+                                      color: AppColors.blurText,
+                                      fontSize: 12
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   SizedBox(height: 20),
                 ],
               ),

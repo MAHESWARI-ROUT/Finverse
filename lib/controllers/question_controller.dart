@@ -13,6 +13,7 @@ class QuestionController extends GetxController {
     loadQuestions();
     nextQuestion();
     previousQuestion();
+    restart();
     super.onInit();
   }
 
@@ -49,8 +50,16 @@ class QuestionController extends GetxController {
   void selectOption(int optionIndex) {
     questions[currentIndex.value].selectedOption =
         questions[currentIndex.value].options[optionIndex];
-    update(); 
+    questions.refresh();
   }
+  void restart() {
+  currentIndex.value = 0;
+
+  for (var q in questions) {
+    q.selectedOption = null;
+  }
+
+  update(); }
 
   int get totalQuestions => questions.length;
 }
