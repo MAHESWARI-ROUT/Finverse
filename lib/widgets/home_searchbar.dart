@@ -1,3 +1,4 @@
+import 'package:finverse/common/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class HomeSearchbar extends StatefulWidget {
@@ -42,21 +43,21 @@ class _HomeSearchbarState extends State<HomeSearchbar> {
           decoration: const InputDecoration(
             prefixIcon: Icon(
               Icons.search,
-              color: Colors.white,
+              color: AppColors.blurText,
             ),
             hintText: 'search....',
             hintStyle: TextStyle(
-              color: Color.fromARGB(159, 255, 255, 255),
+              color: AppColors.blurText,
             ),
-            //fillColor: Color(0xFF859738),
+            fillColor: Color.fromARGB(255, 238, 238, 244),
             filled: true,
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.all(
                 Radius.circular(30),
               ),
               borderSide: BorderSide(
-                color: Colors.white,
-                width: 2,
+                color: Color.fromARGB(255, 238, 238, 244),
+                width: 0,
               ),
             ),
             border: OutlineInputBorder(

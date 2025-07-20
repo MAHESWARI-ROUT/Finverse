@@ -1,13 +1,16 @@
+import 'package:finverse/controllers/course_category_controller.dart';
+import 'package:finverse/controllers/course_controller.dart';
 import 'package:finverse/controllers/question_controller.dart';
 import 'package:finverse/views/home_view.dart';
 
-import 'package:finverse/views/question_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 void main() {
    WidgetsFlutterBinding.ensureInitialized();
   Get.put(QuestionController());
+  Get.put(CourseCategoryController());
+  Get.put(CourseController());
   runApp(const MyApp());
 }
 
