@@ -3,12 +3,14 @@ import 'package:finverse/common/fonts.dart';
 import 'package:flutter/material.dart';
 
 class AppTitle extends StatelessWidget {
-  const AppTitle({super.key});
+  final Color? textColor;
+  final AlignmentGeometry? align;
+  const AppTitle({super.key,this.textColor = AppColors.textW,this.align =  Alignment.center});
 
   @override
   Widget build(BuildContext context) {
     return  Align(
-                  alignment: Alignment.center,
+                  alignment: align!,
                   child: Text.rich(
                     TextSpan(
                       children: [
@@ -16,14 +18,14 @@ class AppTitle extends StatelessWidget {
                           text: 'Fin',
                           style: Fonts.montserratSemiBold.copyWith(
                             fontSize: 24,
-                            color: AppColors.textW,
+                            color: textColor,
                           ),
                         ),
                         TextSpan(
                           text: 'Verse',
                           style: Fonts.montserratLight.copyWith(
                             fontSize: 24,
-                            color: AppColors.textW,
+                            color: textColor,
                           ),
                         ),
                       ],

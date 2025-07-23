@@ -1,7 +1,7 @@
 {
   "investment": [
     {
-      "preview": "",
+      "preview": "assets/images/invest1.png",
       "title": "Master your money: Navigating investment avenues for growth",
       "description": "Master Your Money.' Explore diverse investment avenues and learn strategies for sustainable growth. From stocks to real estate, elevate your financial IQ and chart a prosperous course for your future.",
       "duration": "2hr"
@@ -10,13 +10,13 @@
   ],
   "savings": [
     {
-      "preview": "",
+      "preview": "assets/images/invest2.png",
       "title": "Start by knowing all risks about different saving modes",
       "description": "Dive into the financial adventure with 'Risk Know-How.' Equip yourself to navigate the money maze wisely. Uncover potential pitfalls, maximize gains, and embark on a secure financial journey. Start by knowing, succeed by mastering.",
       "duration": "2hr"
     },
     {
-      "preview": "",
+      "preview": "assets/images/savings.png",
       "title": "Start by knowing all risks about different saving modes",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad ",
       "duration": "2hr"

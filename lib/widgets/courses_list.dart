@@ -1,13 +1,13 @@
 import 'package:finverse/common/app_colors.dart';
 import 'package:finverse/common/fonts.dart';
-import 'package:finverse/controllers/course_category_controller.dart';
+import 'package:finverse/controllers/course_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CoursesList extends StatelessWidget {
   CoursesList({super.key});
 
-  final controller = Get.find<CourseCategoryController>();
+  final controller = Get.find<CourseController>();
   final List<String> categories = ["All", "Investment", "Savings", "Live"];
 
   @override
@@ -42,7 +42,10 @@ class CoursesList extends StatelessWidget {
               }
 
               return GestureDetector(
-                onTap: () => controller.setSelectedIndex(index),
+                onTap: () {
+                  controller.setSelectedIndex(index); // visual state
+                  
+                },
                 child: Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 16,

@@ -25,6 +25,7 @@ class CourseController extends GetxController {
     final String response = await rootBundle.loadString(
       'assets/questions/courses.json',
     );
+    print("Loaded JSON: $response");
     final data = jsonDecode(response);
     categoryCourse["investment"] = (data["investment"] as List)
         .map((e) => Course.fromJson(e))
@@ -53,6 +54,9 @@ class CourseController extends GetxController {
         break;
       case 2: // Savings
         selectedCourse.value = categoryCourse["savings"]!;
+        break;
+      case 3: 
+        selectedCourse.value = []; // or liveCourseList
         break;
       default:
         selectedCourse.clear();
