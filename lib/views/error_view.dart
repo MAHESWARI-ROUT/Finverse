@@ -3,9 +3,10 @@ import 'package:finverse/common/device_utilities.dart';
 import 'package:finverse/common/fonts.dart';
 import 'package:finverse/models/app_title.dart';
 import 'package:flutter/material.dart';
+import 'package:get/state_manager.dart';
 
-class CongratsView extends StatelessWidget {
-  const CongratsView({super.key});
+class ErrorView extends GetView {
+  const ErrorView({super.key});
 
   @override
   Widget build(BuildContext context) {
