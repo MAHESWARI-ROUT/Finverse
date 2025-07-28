@@ -38,6 +38,9 @@ dependencies:
   animated_text_kit: ^4.2.2
   carousel_slider: ^5.1.1
   image_picker: ^1.1.2
+  url_launcher: ^6.3.2
+  font_awesome_flutter: ^10.8.0
+  dotted_border: ^3.1.0
 
 dev_dependencies:
   flutter_test:
@@ -107,6 +110,9 @@ flutter:
          - asset: assets/fonts/Gilroy-SemiBold.ttf
            style: normal
            weight: 600
+         - asset: assets/fonts/Gilroy-Bold.ttf
+           style: normal
+           weight: 700
          
   #   - family: Trajan Pro
   #     fonts:

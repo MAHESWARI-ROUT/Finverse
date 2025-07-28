@@ -33,4 +33,8 @@ class Fonts {
     fontFamily: 'gilroy',
     fontWeight: FontWeight.w600,
   );
+  static const gilroyBold = TextStyle(
+    fontFamily: 'gilroy',
+    fontWeight: FontWeight.w700,
+  );
 }
