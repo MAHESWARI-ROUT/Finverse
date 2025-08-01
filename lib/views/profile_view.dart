@@ -5,6 +5,8 @@ import 'package:finverse/widgets/circular_container.dart';
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 
+import '../common/app_colors.dart';
+
 class ProfileView extends GetView {
   const ProfileView({super.key});
 
