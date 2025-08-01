@@ -156,7 +156,7 @@ class ReferView extends GetView {
                       radius: 50,
                       height: 50,
                       width: 50,
-                      child: Image.asset('assets/images/Ellipse 1209.png'),
+                      child: Image.asset('assets/images/Ellipse1209.png'),
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
