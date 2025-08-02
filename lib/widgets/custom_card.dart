@@ -2,7 +2,9 @@ import 'package:finverse/common/app_colors.dart';
 import 'package:finverse/common/fonts.dart';
 import 'package:finverse/controllers/course_controller.dart';
 import 'package:finverse/models/course.dart';
+import 'package:finverse/views/video_interface_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/instance_manager.dart';
 
@@ -21,7 +23,9 @@ class CustomCard extends StatelessWidget {
         itemBuilder: (context, index) {
           final course = courses[index];
           return GestureDetector(
-            onTap: (){},
+            onTap: () {
+              Get.toNamed('/video');
+            },
             child: Card(
               elevation: 3,
               margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
@@ -34,7 +38,7 @@ class CustomCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(top:18),
+                      padding: EdgeInsets.only(top: 18),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8),
                         child: Image.asset(
@@ -59,7 +63,10 @@ class CustomCard extends StatelessWidget {
                           const SizedBox(height: 6),
                           Text(
                             course.description,
-                            style: Fonts.gilroy.copyWith(fontSize: 10, color: Colors.grey[700]),
+                            style: Fonts.gilroy.copyWith(
+                              fontSize: 10,
+                              color: Colors.grey[700],
+                            ),
                             maxLines: 5,
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -79,7 +86,7 @@ class CustomCard extends StatelessWidget {
                                 ),
                               ),
                             ],
-                          )
+                          ),
                         ],
                       ),
                     ),

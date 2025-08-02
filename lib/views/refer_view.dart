@@ -6,6 +6,7 @@ import 'package:finverse/widgets/image_banner.dart';
 import 'package:finverse/widgets/referal_card.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
 
 class ReferView extends GetView {
@@ -41,7 +42,9 @@ class ReferView extends GetView {
                       children: [
                         IconButton(
                           alignment: Alignment.topLeft,
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.back();
+                          },
                           icon: Icon(Icons.arrow_back, color: AppColors.textW),
                         ),
                         SizedBox(
@@ -226,7 +229,9 @@ class ReferView extends GetView {
                         color: AppColors.textBk,
                       ),
                     ),
-                    SizedBox(height: DeviceUtilities.screenHeight(context)*0.01,),
+                    SizedBox(
+                      height: DeviceUtilities.screenHeight(context) * 0.01,
+                    ),
                     Text(
                       'What is Finar?',
                       style: Fonts.montserratSemiBold.copyWith(
@@ -241,7 +246,9 @@ class ReferView extends GetView {
                         color: AppColors.textBk,
                       ),
                     ),
-                    SizedBox(height: DeviceUtilities.screenHeight(context)*0.01,),
+                    SizedBox(
+                      height: DeviceUtilities.screenHeight(context) * 0.01,
+                    ),
                     Text(
                       'Got More Questions?',
                       style: Fonts.montserratSemiBold.copyWith(

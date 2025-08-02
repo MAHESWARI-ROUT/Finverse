@@ -1,10 +1,11 @@
 import 'package:finverse/common/app_colors.dart';
 import 'package:finverse/common/device_utilities.dart';
 import 'package:finverse/common/fonts.dart';
+import 'package:finverse/views/commun_home_view.dart';
 import 'package:finverse/widgets/circular_container.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
-
 
 class ProfileView extends GetView {
   const ProfileView({super.key});
@@ -52,34 +53,39 @@ class ProfileView extends GetView {
                     height: 263,
                     width: 263,
                     child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Text.rich(
-                          TextSpan(
-                            children: [
-                              TextSpan(
-                                text: 'Novice',
-                                style: Fonts.montserrat.copyWith(
-                                  fontSize: 12,
-                                  color: AppColors.textW,
-                                  decoration: TextDecoration.none,
-                                ),
+                      alignment: Alignment.bottomCenter,
+                      child: Text.rich(
+                        TextSpan(
+                          children: [
+                            TextSpan(
+                              text: 'Novice',
+                              style: Fonts.montserrat.copyWith(
+                                fontSize: 12,
+                                color: AppColors.textW,
+                                decoration: TextDecoration.none,
                               ),
-                              
-                              TextSpan(text: ' Fin',style: Fonts.montserratBold.copyWith(
-                                  fontSize: 12,
-                                  color: AppColors.textW,
-                                  decoration: TextDecoration.none,
-                                ),),
-                                TextSpan(text: 'Learner',style: Fonts.montserrat.copyWith(
-                                  fontSize: 12,
-                                  color: AppColors.textW,
-                                  decoration: TextDecoration.none,
-                                ),),
+                            ),
 
-                            ],
-                          ),
+                            TextSpan(
+                              text: ' Fin',
+                              style: Fonts.montserratBold.copyWith(
+                                fontSize: 12,
+                                color: AppColors.textW,
+                                decoration: TextDecoration.none,
+                              ),
+                            ),
+                            TextSpan(
+                              text: 'Learner',
+                              style: Fonts.montserrat.copyWith(
+                                fontSize: 12,
+                                color: AppColors.textW,
+                                decoration: TextDecoration.none,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
+                    ),
                   ),
                   Align(
                     alignment: Alignment.center,
@@ -108,12 +114,15 @@ class ProfileView extends GetView {
                                   decoration: TextDecoration.none,
                                 ),
                               ),
-                              
-                              TextSpan(text: ' K.',style: Fonts.montserrat.copyWith(
+
+                              TextSpan(
+                                text: ' K.',
+                                style: Fonts.montserrat.copyWith(
                                   fontSize: 22,
                                   color: AppColors.textW,
                                   decoration: TextDecoration.none,
-                                ),),
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -172,7 +181,9 @@ class ProfileView extends GetView {
           top: DeviceUtilities.screenHeight(context) * 0.04,
           left: DeviceUtilities.screenWidth(context) * 0.02,
           child: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.back();
+            },
             icon: Icon(Icons.arrow_back, color: Colors.white),
           ),
         ),
@@ -333,26 +344,31 @@ class ProfileView extends GetView {
                       ),
                     ),
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: AppColors.highlightColor,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Center(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset('assets/images/image35.png'),
-                          Text(
-                            'Community',
-                            style: Fonts.gilroySemiBold.copyWith(
-                              fontSize: 15,
-                              color: AppColors.textBk,
-                              decoration: TextDecoration.none,
+                  GestureDetector(
+                    onTap: () {
+                      Get.toNamed('/commun_home');
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: AppColors.highlightColor,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Center(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset('assets/images/image35.png'),
+                            Text(
+                              'Community',
+                              style: Fonts.gilroySemiBold.copyWith(
+                                fontSize: 15,
+                                color: AppColors.textBk,
+                                decoration: TextDecoration.none,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
