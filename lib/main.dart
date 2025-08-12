@@ -4,6 +4,7 @@ import 'package:finverse/views/authentication_views/login_view.dart';
 import 'package:finverse/views/commun_home_view.dart';
 import 'package:finverse/views/congrats_view.dart';
 import 'package:finverse/views/error_view.dart';
+import 'package:finverse/views/full_commun_view.dart';
 import 'package:finverse/views/home_view.dart';
 import 'package:finverse/views/profile_view.dart';
 import 'package:finverse/views/question_view.dart';
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
         '/question': (context) => QuestionView(),
         '/video': (context) => VideoInterfaceView(),
         '/commun_home': (context) => CommunHomeView(),
+  
       },
     );
   }

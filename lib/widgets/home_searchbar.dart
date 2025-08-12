@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class HomeSearchbar extends StatefulWidget {
   const HomeSearchbar(
       {super.key,
-      this.height = 120,
+      this.height = 70,
       this.width = double.infinity,
       this.color = Colors.transparent});
   final double? height, width;
@@ -35,7 +35,7 @@ class _HomeSearchbarState extends State<HomeSearchbar> {
         ),
         color: widget.color,
       ),
-      padding: const EdgeInsets.only(left: 6, right: 6, top: 1, bottom: 10),
+      padding: const EdgeInsets.only(left: 6, right: 6, top: 1, ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: TextField(

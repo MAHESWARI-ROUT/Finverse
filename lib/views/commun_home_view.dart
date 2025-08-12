@@ -1,6 +1,11 @@
 import 'package:finverse/common/app_colors.dart';
 import 'package:finverse/common/device_utilities.dart';
+import 'package:finverse/common/fonts.dart';
+import 'package:finverse/controllers/commun_controller.dart';
 import 'package:finverse/models/app_title.dart';
+import 'package:finverse/widgets/chat_box.dart';
+import 'package:finverse/widgets/commun_card.dart';
+import 'package:finverse/widgets/custom_card.dart';
 import 'package:finverse/widgets/home_searchbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,6 +15,7 @@ class CommunHomeView extends GetView {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(CommunityController());
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(
@@ -42,7 +48,26 @@ class CommunHomeView extends GetView {
           ),
         ),
       ),
-      body: Column(children: [SizedBox(height: 10), HomeSearchbar()]),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: 10),
+            HomeSearchbar(),
+            Padding(
+              padding: const EdgeInsets.only(left: 15.0,right: 15.0),
+              child: Text(
+                'Start by knowing all risk about different saving modes',
+                style: Fonts.gilroySemiBold.copyWith(
+                  fontSize: 18,
+                  color: AppColors.textBk,
+                ),
+              ),
+            ),
+            CommunCard(),
+          ],
+        ),
+      ),
+      bottomNavigationBar: ChatBox(),
     );
   }
 }
