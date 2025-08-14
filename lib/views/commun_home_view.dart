@@ -67,7 +67,7 @@ class CommunHomeView extends GetView {
           ],
         ),
       ),
-      bottomNavigationBar: ChatBox(),
+      bottomNavigationBar: ChatBox(hinttext: 'Post your thread',),
     );
   }
 }

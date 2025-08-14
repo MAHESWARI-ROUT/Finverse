@@ -108,14 +108,23 @@ class FullCommunView extends GetView {
                     ),
                   ),
                 ),
-                Align(alignment: Alignment.topLeft, child: Text('Comments')),
+                SizedBox(height: 20,),
+                Padding(
+                  padding:  EdgeInsets.only(
+                    left: DeviceUtilities.screenWidth(context) * 0.05,
+                    right: DeviceUtilities.screenWidth(context) * 0.05,
+                  ),
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: Text('Comments'),
+                  ),
+                ),
               ],
             ),
           ),
-          
         ],
       ),
-      bottomNavigationBar: ChatBox(),
+      bottomNavigationBar: ChatBox(hinttext: 'comment'),
     );
   }
 }

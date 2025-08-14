@@ -56,7 +56,7 @@ class CourseController extends GetxController {
         selectedCourse.value = categoryCourse["savings"]!;
         break;
       case 3: 
-        selectedCourse.value = []; // or liveCourseList
+        Get.toNamed('/live_view');// or liveCourseList
         break;
       default:
         selectedCourse.clear();

@@ -12,11 +12,15 @@ class CircularContainer extends StatelessWidget {
     this.gradientcolor,
     this.isgradient = false,
     this.paddingValue = 5,
+    this.isShadow = false,
+    this.boxShadow
   });
   final double paddingValue;
   final double? width, height;
   final Color? color;
   final Widget? child;
+  final bool? isShadow;
+  final List<BoxShadow>? boxShadow;
   final double radius;
   final EdgeInsets? margin;
   final Gradient? gradientcolor;
@@ -32,6 +36,7 @@ class CircularContainer extends StatelessWidget {
         gradient: isgradient ? gradientcolor : null,
         color: isgradient ? null : color,
         borderRadius: BorderRadius.circular(radius),
+        boxShadow: isShadow! ? boxShadow : null,
       ),
       child: child,
     );

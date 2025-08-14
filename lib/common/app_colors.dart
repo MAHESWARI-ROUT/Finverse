@@ -15,5 +15,8 @@ class AppColors {
   static const blurColor = Color(0xFFE9E2E7);
   static const blurText = Color(0xFF4D4949);
   static const lightBlue = Color(0xFF89A3F4);
-
+  static const barColor1 = Color(0xFF1B5EE4);
+  static const barColor2 = Color(0xFF7190EC);
+  static const pieColor = Color(0xFFEFF1F5);
+  static const gridColor = Color(0xFFF1EDED);
 }

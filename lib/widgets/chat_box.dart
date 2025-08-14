@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 
 class ChatBox extends GetView {
-  const ChatBox({super.key});
-
+  const ChatBox({super.key,required this.hinttext});
+  final String hinttext;
   @override
   Widget build(BuildContext context) {
     final controller = TextEditingController();
@@ -26,7 +26,7 @@ class ChatBox extends GetView {
                 controller: controller,
                 decoration: InputDecoration(
                   
-                  hintText: 'post your thread',
+                  hintText: hinttext,
                   hintStyle: const TextStyle(color: Colors.grey),
                   border: InputBorder.none,
                   enabledBorder: InputBorder.none,

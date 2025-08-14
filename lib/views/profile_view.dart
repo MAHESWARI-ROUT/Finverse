@@ -275,26 +275,31 @@ class ProfileView extends GetView {
                     ),
                   ),
 
-                  Container(
-                    decoration: BoxDecoration(
-                      color: AppColors.highlightColor,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Center(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset('assets/images/image32.png'),
-                          Text(
-                            'Analytics',
-                            style: Fonts.gilroySemiBold.copyWith(
-                              fontSize: 15,
-                              color: AppColors.textBk,
-                              decoration: TextDecoration.none,
+                  GestureDetector(
+                    onTap: (){
+                      Get.toNamed('/analytics_view');
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: AppColors.highlightColor,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Center(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset('assets/images/image32.png'),
+                            Text(
+                              'Analytics',
+                              style: Fonts.gilroySemiBold.copyWith(
+                                fontSize: 15,
+                                color: AppColors.textBk,
+                                decoration: TextDecoration.none,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
