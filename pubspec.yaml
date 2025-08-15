@@ -73,6 +73,7 @@ flutter:
     - assets/questions/courses.json
     - assets/questions/questions.json
     - assets/questions/commun.json
+    - assets/questions/assignment_question.json
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 

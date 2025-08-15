@@ -1,7 +1,11 @@
 import 'package:finverse/controllers/course_controller.dart';
 import 'package:finverse/controllers/question_controller.dart';
 import 'package:finverse/views/analytics_view.dart';
+import 'package:finverse/views/assignment_view.dart';
 import 'package:finverse/views/authentication_views/login_view.dart';
+import 'package:finverse/views/authentication_views/preload1_view.dart';
+import 'package:finverse/views/authentication_views/preload2_view.dart';
+import 'package:finverse/views/authentication_views/signup_view.dart';
 import 'package:finverse/views/commun_home_view.dart';
 import 'package:finverse/views/congrats_view.dart';
 import 'package:finverse/views/error_view.dart';
@@ -34,8 +38,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/loading',
+      initialRoute: '/preload1',
       getPages: [
+        GetPage(name: '/preload1', page:() => Preload1View()),
+        GetPage(name: '/preload2', page:() => Preload2View()),
+        GetPage(name: '/signup', page:() => SignupView()),
         GetPage(name: '/loading', page:() => LoadingView()),
         GetPage(name: '/', page: () => HomeView()),
         GetPage(name: '/login', page: () => LoginView()),
@@ -48,6 +55,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/commun_home', page: () => CommunHomeView()),
         GetPage(name: '/live_view', page: () => LiveView()),
         GetPage(name: '/analytics_view', page: () => AnalyticsView()),
+        GetPage(name: '/assignment_view', page: () => AssignmentView()),
       ],
     );
   }

@@ -14,6 +14,8 @@ class QuestionContainer extends StatelessWidget {
   //final void Function(String) onOptionSelected;
   final VoidCallback onNext;
   final VoidCallback onPrev;
+  final VoidCallback? onSubmit;
+  final bool isAssignment;
   const QuestionContainer({
     super.key,
     required this.question,
@@ -24,15 +26,18 @@ class QuestionContainer extends StatelessWidget {
     required this.currentIndex,
     required this.questionlength,
     required this.onOptionSelected,
+    this.isAssignment = false,
+    this.onSubmit 
+
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 482,
+      
       width: 310,
       padding: EdgeInsets.only(left: 20, right: 20, top: 40, bottom: 40),
-
+    
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: AppColors.highlightColor,
@@ -129,6 +134,20 @@ class QuestionContainer extends StatelessWidget {
                     size: 12,
                   ),
                 ),
+                if (isAssignment && currentIndex + 1 ==
+                      questionlength)
+                     TextButton.icon(
+                  onPressed: onSubmit,
+                  label: Text(
+                    'Submit',
+                    style: Fonts.gilroySemiBold.copyWith(fontSize: 12),
+                  ),
+                  icon: Icon(
+                    Icons.arrow_forward_ios,
+                    color: AppColors.mainColor,
+                    size: 12,
+                  ),
+                ), 
             ],
           ),
         ],

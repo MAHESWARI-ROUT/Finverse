@@ -80,7 +80,7 @@ class LoginView extends GetView {
                       borderRadius: BorderRadius.circular(12),
                     ),
                   ),
-                  onPressed: () {}, //method
+                  onPressed: () {Get.toNamed('/loading');}, 
                   child: Text(
                     'Login',
                     style: Fonts.montserratExtraBold.copyWith(

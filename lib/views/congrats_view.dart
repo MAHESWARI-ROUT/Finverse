@@ -3,6 +3,7 @@ import 'package:finverse/common/device_utilities.dart';
 import 'package:finverse/common/fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
 
 class CongratsView extends GetView {
@@ -51,7 +52,9 @@ class CongratsView extends GetView {
               ),
               SizedBox(height: DeviceUtilities.screenHeight(context) * .02),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed('/');
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.blueTitle,
                 ),

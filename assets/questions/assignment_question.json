@@ -1,0 +1,65 @@
+[
+    {
+        "questionText": "What are the potential drawbacks of relying solely on credit cards for everyday expenses?",
+        "options": [
+            "Increased risk of accumulating high-interest debt, especially if balances are not paid in full each month.",
+            "Enhanced financial security due to advanced fraud protection measures.",
+            "Improved credit score and increased chances of loan approvals in the long run.",
+            "Reduced chances of overspending and making impulse purchases."
+        ]
+    },
+    {
+        "questionText": "What risks might be associated with depending exclusively on online banking for financial transactions?",
+        "options": [
+            "Improved convenience and accessibility to financial services.",
+            "Enhanced protection against identity theft and fraud.",
+            "Increased vulnerability to cyber threats, such as hacking and phishing attacks.",
+            "Better control over personal financial data and reduced privacy concerns."
+        ]
+    },
+    {
+        "questionText": "What risks might individuals face if they prioritize short-term gains over long-term financial planning?",
+        "options": [
+            "Long-term financial stability and security, leading to a comfortable retirement.",
+            "Potential for higher returns and wealth accumulation over an extended period.",
+            "Increased risk of inadequate savings and financial challenges in the future.",
+            "Improved ability to handle unexpected financial emergencies with ease."
+        ]
+    },
+    {
+        "questionText": "In what ways might a focus on immediate profits lead to increased financial vulnerability in the future?",
+        "options": [
+            "Long-term investment opportunities may be overlooked, limiting overall portfolio growth.",
+            "Enhanced financial security and stability due to quick returns on short-term investments.",
+            "Improved ability to navigate economic uncertainties by prioritizing immediate profits.",
+            "Increased risk of exposure to market volatility and potential financial losses over time."
+        ]
+    },
+    {
+        "questionText": "What is the primary purpose of diversification in an investment portfolio?",
+        "options": [
+            "Maximizing short-term gains",
+            "Reducing risk by spreading investments across different asset classes",
+            "Guaranteeing a fixed rate of return",
+            "Minimizing tax liabilities"
+        ]
+    },
+    {
+        "questionText": "How might an increase in interest rates impact individuals with variable-rate loans?",
+        "options": [
+            "Monthly payments decrease",
+            "Total interest paid over the loan term decreases",
+            "Monthly payments increase",
+            "Total loan amount decreases"
+        ]
+    },
+    {
+        "questionText": "What is the key benefit of dollar-cost averaging in investment strategies?",
+        "options": [
+            "Maximizing short-term gains",
+            "Minimizing taxes on capital gains",
+            "Reducing the impact of market volatility",
+            "Guaranteeing a fixed rate of return"
+        ]
+    }
+]

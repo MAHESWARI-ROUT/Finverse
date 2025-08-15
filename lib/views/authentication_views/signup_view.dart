@@ -54,10 +54,7 @@ class SignupView extends GetView {
                 ),
               ),
               SizedBox(height: DeviceUtilities.screenHeight(context) * 0.05),
-              CustomTextField(
-                hintText: 'Email',
-                controller: emailController,
-              ),
+              CustomTextField(hintText: 'Email', controller: emailController),
               SizedBox(height: DeviceUtilities.screenHeight(context) * 0.025),
               CustomTextField(
                 hintText: 'Phone No.',
@@ -91,7 +88,9 @@ class SignupView extends GetView {
                       borderRadius: BorderRadius.circular(12),
                     ),
                   ),
-                  onPressed: () {}, //method
+                  onPressed: () {
+                    Get.toNamed('/login');
+                  },
                   child: Text(
                     'Sign Up',
                     style: Fonts.montserratExtraBold.copyWith(

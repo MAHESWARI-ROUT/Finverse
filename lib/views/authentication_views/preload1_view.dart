@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
 
 import '../../common/app_colors.dart';
 import '../../common/fonts.dart';
 
-class Preload1Screen extends GetView {
-  const Preload1Screen({super.key});
+class Preload1View extends GetView {
+  const Preload1View({super.key});
 
   @override
   Widget build(BuildContext context) {
+     WidgetsBinding.instance.addPostFrameCallback((_) {
+      Future.delayed(const Duration(seconds: 3), () {
+        Get.offNamed('/preload2'); 
+      });
+    });
     return Scaffold(
       body: Container(
         height: double.infinity,

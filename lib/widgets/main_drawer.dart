@@ -163,7 +163,7 @@ class MainDrawer extends StatelessWidget {
                   ),
                 ),
                 leading: const Icon(Icons.logout, color: AppColors.textBk),
-                onTap: () {},
+                onTap: () {Get.toNamed('/signup');},
               ),
             ],
           ),

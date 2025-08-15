@@ -1,6 +1,7 @@
 import 'package:finverse/common/app_colors.dart';
 import 'package:finverse/common/device_utilities.dart';
 import 'package:finverse/common/fonts.dart';
+import 'package:finverse/controllers/assignment_controller.dart';
 import 'package:finverse/models/app_title.dart';
 import 'package:finverse/widgets/circular_container.dart';
 import 'package:finverse/widgets/custom_card.dart';
@@ -150,7 +151,10 @@ class VideoInterfaceView extends GetView {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusGeometry.circular(50),
         ),
-        onPressed: () {},
+        onPressed: () {
+          Get.put(AssignmentController());
+          Get.toNamed('/assignment_view');
+        },
         backgroundColor: AppColors.blueTitle,
       ),
     );

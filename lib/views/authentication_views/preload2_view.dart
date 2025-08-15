@@ -1,15 +1,21 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
 
 import '../../common/app_colors.dart';
 import '../../common/fonts.dart';
 
-class Preload2Screen extends GetView {
-  const Preload2Screen({super.key});
+class Preload2View extends GetView {
+  const Preload2View({super.key});
 
   @override
   Widget build(BuildContext context) {
+     WidgetsBinding.instance.addPostFrameCallback((_) {
+      Future.delayed(const Duration(seconds: 3), () {
+        Get.offNamed('/signup'); 
+      });
+    });
     return Scaffold(
       body: Container(
         width: double.infinity,
