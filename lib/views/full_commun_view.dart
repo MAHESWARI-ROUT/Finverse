@@ -4,6 +4,7 @@ import 'package:finverse/common/fonts.dart';
 import 'package:finverse/models/app_title.dart';
 import 'package:finverse/models/commun_question.dart';
 import 'package:finverse/widgets/chat_box.dart';
+import 'package:finverse/widgets/comment_section.dart';
 import 'package:finverse/widgets/home_searchbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -116,7 +117,13 @@ class FullCommunView extends GetView {
                   ),
                   child: Align(
                     alignment: Alignment.topLeft,
-                    child: Text('Comments'),
+                    child: Column(
+                      children: [
+                        Text('Comments'),
+                        SizedBox(height: 10,),
+                        CommentSection(),
+                      ],
+                    ),
                   ),
                 ),
               ],

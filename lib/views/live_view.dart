@@ -4,6 +4,7 @@ import 'package:finverse/common/fonts.dart';
 import 'package:finverse/controllers/course_controller.dart';
 import 'package:finverse/models/app_title.dart';
 import 'package:finverse/widgets/chat_box.dart';
+import 'package:finverse/widgets/comment_section.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -129,6 +130,8 @@ class LiveView extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 10,),
+            CommentSection()
           ],
         ),
       ),
