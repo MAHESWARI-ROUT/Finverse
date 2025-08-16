@@ -104,7 +104,9 @@ class LoginView extends GetView {
                   ),
                   TextButton(
                     style: TextButton.styleFrom(padding: EdgeInsets.zero),
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed('/signup');
+                    },
                     child: Text(
                       'Signup',
                       style: Fonts.montserratExtraBold.copyWith(
