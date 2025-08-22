@@ -13,7 +13,8 @@ import 'package:get/get_core/src/get_main.dart';
 
 class AssignmentView extends StatelessWidget {
   AssignmentView({super.key});
-  final controller = Get.find<AssignmentController>();
+  final controller = Get.put(AssignmentController());
+
 
   @override
   Widget build(BuildContext context) {
