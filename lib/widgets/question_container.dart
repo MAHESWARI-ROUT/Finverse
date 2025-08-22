@@ -83,7 +83,9 @@ class QuestionContainer extends StatelessWidget {
                             child: Icon(
                               Icons.circle_outlined,
                               size: 12,
-                              color: AppColors.texthint,
+                              color:isSelected
+                                  ? AppColors.textW
+                                  : AppColors.texthint,
                             ),
                           ),
                           SizedBox(width: 8),
@@ -92,7 +94,9 @@ class QuestionContainer extends StatelessWidget {
                               option,
                               style: Fonts.gilroy.copyWith(
                                 fontSize: 12,
-                                color: AppColors.texthint,
+                                color: isSelected
+                                    ? AppColors.textW
+                                    : AppColors.texthint,
                               ),
                               softWrap: true,
                             ),

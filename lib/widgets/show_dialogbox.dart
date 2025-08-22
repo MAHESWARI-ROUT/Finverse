@@ -30,22 +30,30 @@ void showDialogbox(
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  color: AppColors.mainColor,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                alignment: Alignment.center,
-                child: Text(
-                  title,
-                  style: Fonts.gilroyBold.copyWith(
-                    fontSize: 14,
-                    color: AppColors.highlightColor,
+
+              //title
+              IntrinsicWidth(
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: AppColors.mainColor,
+                    borderRadius: BorderRadius.circular(20),
                   ),
-                  
+                  padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 10), // Optional, for internal spacing
+                
+                  alignment: Alignment.center,
+                  child: Text(
+                    title,
+                    style: Fonts.gilroyBold.copyWith(
+                      fontSize: 14,
+                      color: AppColors.highlightColor,
+                    ),
+                
+                  ),
                 ),
               ),
               SizedBox(height: 20),
+
+              //message
               Text(
                 message,
                 style: Fonts.gilroySemiBold.copyWith(
@@ -55,6 +63,7 @@ void showDialogbox(
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 20),
+              // confirm/reject row
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -75,8 +84,8 @@ void showDialogbox(
                       decoration: BoxDecoration(
                         color: AppColors.mainColor,
                         borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(12),
-                          bottomLeft: Radius.circular(12),
+                          topLeft: Radius.circular(8),
+                          bottomLeft: Radius.circular(8),
                         ),
                       ),
                       alignment: Alignment.center,
@@ -106,10 +115,10 @@ void showDialogbox(
                       width: 92,
                       height: 25,
                       decoration: BoxDecoration(
-                        color: AppColors.texthint,
+                        color: AppColors.blurColor,
                         borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(12),
-                          bottomRight: Radius.circular(12),
+                          topRight: Radius.circular(8),
+                          bottomRight: Radius.circular(8),
                         ),
                       ),
                       alignment: Alignment.center,
@@ -117,7 +126,7 @@ void showDialogbox(
                         cancelText,
                         style: Fonts.gilroyBold.copyWith(
                           fontSize: 8,
-                          color: AppColors.highlightColor,
+                          color: AppColors.textBk.withAlpha(100),
                         ),
                       ),
                     ),
@@ -125,6 +134,8 @@ void showDialogbox(
                 ],
               ),
               SizedBox(height: 15,),
+
+              //bottom message
               Text(
                 'Don’t worry, you can resume it later as well',
                 style: Fonts.gilroyBold.copyWith(

@@ -21,10 +21,12 @@ import 'package:finverse/views/video_interface_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'controllers/assignment_controller.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Get.put(QuestionController());
-
+  //Get.put(AssignmentController());
   Get.put(CourseController());
 
   runApp(const MyApp());
