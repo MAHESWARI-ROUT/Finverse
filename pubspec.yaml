@@ -70,6 +70,7 @@ flutter:
   assets:
     - assets/fonts/
     - assets/images/
+    - assets/icons/
     - assets/questions/courses.json
     - assets/questions/questions.json
     - assets/questions/commun.json

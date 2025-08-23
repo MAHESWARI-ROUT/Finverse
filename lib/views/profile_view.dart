@@ -14,6 +14,7 @@ class ProfileView extends GetView {
   Widget build(BuildContext context) {
     return Stack(
       children: [
+        //profile avatar
         Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -37,6 +38,8 @@ class ProfileView extends GetView {
               child: Stack(
                 alignment: Alignment.center,
                 children: [
+
+                  //outer circular container + fin learner
                   CircularContainer(
                     paddingValue: 0,
                     isgradient: true,
@@ -87,6 +90,8 @@ class ProfileView extends GetView {
                       ),
                     ),
                   ),
+
+                  //inner circular container + user name
                   Align(
                     alignment: Alignment.center,
                     child: CircularContainer(
@@ -129,54 +134,71 @@ class ProfileView extends GetView {
                       ),
                     ),
                   ),
+
+                  //avatar image + pro badge
                   Align(
                     alignment: Alignment.center,
-                    child: CircularContainer(
-                      paddingValue: 0,
-
-                      radius: 150,
-                      color: Color(0xFF3B37F5),
-                      height: 150,
-                      width: 150,
-                      child: ClipOval(
-                        child: FittedBox(
-                          child: Image.asset(
-                            'assets/images/Ellipse1209.png',
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    top: DeviceUtilities.screenHeight(context) * 0.335,
-                    left: 0,
-                    right: 0,
-                    child: Align(
+                    child: Stack(
+                      clipBehavior: Clip.none,
                       alignment: Alignment.center,
-                      child: CircularContainer(
-                        radius: 20,
-                        height: 20,
-                        width: 40,
-                        color: Color(0xFF3B37F5),
-                        child: Center(
-                          child: Text(
-                            '🗯️ Pro',
-                            style: Fonts.montserratBold.copyWith(
-                              fontSize: 6,
-                              color: AppColors.textW,
-                              decoration: TextDecoration.none,
+                      children: [
+                        CircularContainer(
+                          paddingValue: 0,
+                          radius: 150,
+                          color: Color(0xFF3B37F5),
+                          height: 150,
+                          width: 150,
+                          child: ClipOval(
+                            child: FittedBox(
+                              child: Image.asset(
+                                'assets/images/Ellipse1209.png',
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         ),
-                      ),
+
+                        //pro badge
+                        Positioned(
+                          bottom: -5,
+                          child: Align(
+                            alignment: Alignment.bottomCenter,
+                            child: CircularContainer(
+                              radius: 20,
+                              height: 20,
+                              width: 40,
+                              color: Color(0xFF3B37F5),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset('assets/icons/pro_star.png',width: 10,),
+                                  Text(
+                                    ' Pro',
+                                    style: Fonts.montserratBold.copyWith(
+                                      fontSize: 7,
+                                      color: AppColors.textW,
+                                      decoration: TextDecoration.none,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
+
+
+
+
                 ],
               ),
             ),
           ),
         ),
+
+        //Back button
         Positioned(
           top: DeviceUtilities.screenHeight(context) * 0.04,
           left: DeviceUtilities.screenWidth(context) * 0.02,
@@ -188,6 +210,7 @@ class ProfileView extends GetView {
           ),
         ),
 
+        //Fin Score
         Positioned(
           left: 0,
           right: 0,
@@ -227,6 +250,8 @@ class ProfileView extends GetView {
             ),
           ),
         ),
+
+        //bottom part of the screen
         Positioned(
           left: 0,
           right: 0,

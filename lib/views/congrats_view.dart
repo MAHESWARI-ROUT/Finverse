@@ -14,7 +14,9 @@ class CongratsView extends GetView {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.offAllNamed("/");
+          },
           icon: Icon(Icons.arrow_back, color: AppColors.blueTitle),
         ),
       ),

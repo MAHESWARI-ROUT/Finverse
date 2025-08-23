@@ -1,7 +1,7 @@
 import 'package:finverse/common/app_colors.dart';
 import 'package:finverse/common/device_utilities.dart';
 import 'package:finverse/common/fonts.dart';
-import 'package:finverse/models/app_title.dart';
+import 'package:finverse/widgets/app_title.dart';
 import 'package:finverse/widgets/carousel_bannerslider.dart';
 import 'package:finverse/widgets/courses_list.dart';
 import 'package:finverse/widgets/custom_card.dart';
