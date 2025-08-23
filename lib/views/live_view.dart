@@ -7,9 +7,19 @@ import 'package:finverse/widgets/chat_box.dart';
 import 'package:finverse/widgets/comment_section.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:video_player/video_player.dart';
 
-class LiveView extends StatelessWidget {
+import '../widgets/video_player.dart';
+
+class LiveView extends StatefulWidget {
   const LiveView({super.key});
+
+  @override
+  State<LiveView> createState() => _LiveViewState();
+}
+
+class _LiveViewState extends State<LiveView> {
+  bool _isExpanded = false;
 
   @override
   Widget build(BuildContext context) {
@@ -47,63 +57,128 @@ class LiveView extends StatelessWidget {
           ),
         ),
       ),
-      body: SingleChildScrollView(
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            SizedBox(height: 20),
-            Container(
-              height: DeviceUtilities.screenHeight(context) * 0.3,
-              width: DeviceUtilities.screenWidth(context) * 0.9,
-              decoration: BoxDecoration(
-                color: Colors.grey,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Image.asset(
-                'assets/images/Group465.png',
-                fit: BoxFit.cover,
-              ),
+            Stack(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(16),
+                  child: CustomVideoPlayer(
+                    videoUrl:
+                        'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4',
+                  ),
+                ),
+                Positioned(
+                  top: 12,
+                  left: 12,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 4,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.circle, size: 10, color: Colors.white),
+                        SizedBox(width: 5),
+                        Text(
+                          'LIVE',
+                          style: Fonts.gilroySemiBold.copyWith(
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
             SizedBox(height: 20),
-            Padding(
-              padding: EdgeInsets.only(
-                left: DeviceUtilities.screenHeight(context) * 0.025,
-                right: DeviceUtilities.screenHeight(context) * 0.025,
-              ),
-              child: Row(
-                children: [
-                  Text(
-                    'Start by Knowing all risk about\ndifferent saving models',
+            //title
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Text(
+                    'Start by Knowing all risk about different saving models.',
+                    overflow: _isExpanded
+                        ? TextOverflow.visible
+                        : TextOverflow.ellipsis,
                     style: Fonts.gilroySemiBold.copyWith(
                       fontSize: 18,
                       color: AppColors.textBk,
                     ),
                   ),
-                  SizedBox(width: DeviceUtilities.screenWidth(context) * 0.01),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.arrow_downward),
+                ),
+                SizedBox(width: 16),
+                GestureDetector(
+                  onTap: () {
+                    setState(() => _isExpanded = !_isExpanded);
+                  },
+                  child: CircleAvatar(
+                    radius: 16,
+                    backgroundColor: AppColors.texthint.shade400,
+                    child: Icon(
+                      _isExpanded
+                          ? Icons.keyboard_arrow_up_rounded
+                          : Icons.keyboard_arrow_down_rounded,
+                      color: Colors.white,
+                      size: 20,
+                    ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-            SizedBox(height: 5),
+
+            // Description (shown only when expanded)
+            if (_isExpanded)
+              Padding(
+                padding: EdgeInsets.only(top: 8),
+                child: Card(
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: Text(
+                      'This is the full description that will be shown when expanded. You can add multiple lines here without truncation.',
+                      style: const TextStyle(
+                        fontSize: 14,
+                        color: Colors.black87,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
+            SizedBox(height: 8),
             Padding(
-              padding: EdgeInsets.only(
-                left: DeviceUtilities.screenHeight(context) * 0.025,
-                right: DeviceUtilities.screenHeight(context) * 0.025,
+              padding: EdgeInsets.symmetric(
+                horizontal: DeviceUtilities.screenHeight(context) * 0.025,
               ),
               child: Row(
                 children: [
-                  Icon(Icons.visibility_outlined, color: AppColors.blurText),
+                  Icon(Icons.visibility, color: AppColors.blurText, size: 18),
+                  SizedBox(width: 4), // space between icon & text
                   Text(
-                    '19,23455 views',
+                    '19,23455 viewers',
                     style: Fonts.gilroy.copyWith(
                       fontSize: 12,
                       color: AppColors.textBk,
                     ),
                   ),
-                  SizedBox(width: 10),
-                  Icon(Icons.favorite, color: AppColors.blurText),
+                  SizedBox(width: 16), // space between view & like section
+                  Icon(Icons.favorite, color: AppColors.blurText, size: 18),
+                  SizedBox(width: 4),
                   Text(
                     '47,987 likes',
                     style: Fonts.gilroy.copyWith(
@@ -114,6 +189,7 @@ class LiveView extends StatelessWidget {
                 ],
               ),
             ),
+
             SizedBox(height: 5),
             SizedBox(
               width: double.infinity,
@@ -130,8 +206,8 @@ class LiveView extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 10,),
-            CommentSection()
+            SizedBox(height: 10),
+            Expanded(child: CommentSection()),
           ],
         ),
       ),
