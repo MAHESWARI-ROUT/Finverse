@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:finverse/common/app_colors.dart';
 import 'package:finverse/common/device_utilities.dart';
 import 'package:finverse/common/fonts.dart';
-import 'package:finverse/models/app_title.dart';
+import 'package:finverse/widgets/app_title.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';

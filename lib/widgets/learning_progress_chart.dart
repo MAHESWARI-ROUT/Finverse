@@ -7,96 +7,195 @@ class LearningProgressChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final barGroups = [
+      BarChartGroupData(
+        x: 0,
+        barRods: [
+          BarChartRodData(
+            toY: 8,
+            color: AppColors.barColor1,
+            borderRadius: BorderRadius.circular(0),
+          ),
+          BarChartRodData(
+            toY: 6,
+            color: AppColors.barColor2,
+            borderRadius: BorderRadius.circular(0),
+          ),
+        ],
+      ),
+      BarChartGroupData(
+        x: 1,
+        barRods: [
+          BarChartRodData(
+            toY: 5,
+            color: AppColors.barColor1,
+            borderRadius: BorderRadius.circular(0),
+          ),
+          BarChartRodData(
+            toY: 8,
+            color: AppColors.barColor2,
+            borderRadius: BorderRadius.circular(0),
+          ),
+        ],
+      ),
+      BarChartGroupData(
+        x: 2,
+        barRods: [
+          BarChartRodData(
+            toY: 3,
+            color: AppColors.barColor1,
+            borderRadius: BorderRadius.circular(0),
+          ),
+          BarChartRodData(
+            toY: 4,
+            color: AppColors.barColor2,
+            borderRadius: BorderRadius.circular(0),
+          ),
+        ],
+      ),
+      BarChartGroupData(
+        x: 3,
+        barRods: [
+          BarChartRodData(
+            toY: 7,
+            color: AppColors.barColor1,
+            borderRadius: BorderRadius.circular(0),
+          ),
+          BarChartRodData(
+            toY: 4,
+            color: AppColors.barColor2,
+            borderRadius: BorderRadius.circular(0),
+          ),
+        ],
+      ),
+      BarChartGroupData(
+        x: 4,
+        barRods: [
+          BarChartRodData(
+            toY: 6,
+            color: AppColors.barColor1,
+            borderRadius: BorderRadius.circular(0),
+          ),
+          BarChartRodData(
+            toY: 5,
+            color: AppColors.barColor2,
+            borderRadius: BorderRadius.circular(0),
+          ),
+        ],
+      ),
+      BarChartGroupData(
+        x: 5,
+        barRods: [
+          BarChartRodData(
+            toY: 4,
+            color: AppColors.barColor1,
+            borderRadius: BorderRadius.circular(0),
+          ),
+          BarChartRodData(
+            toY: 7,
+            color: AppColors.barColor2,
+            borderRadius: BorderRadius.circular(0),
+          ),
+        ],
+      ),
+      BarChartGroupData(
+        x: 6,
+        barRods: [
+          BarChartRodData(
+            toY: 2,
+            color: AppColors.barColor1,
+            borderRadius: BorderRadius.circular(0),
+          ),
+          BarChartRodData(
+            toY: 3,
+            color: AppColors.barColor2,
+            borderRadius: BorderRadius.circular(0),
+          ),
+        ],
+      ),
+      BarChartGroupData(
+        x: 7,
+        barRods: [
+          BarChartRodData(
+            toY: 9,
+            color: AppColors.barColor1,
+            borderRadius: BorderRadius.circular(0),
+          ),
+          BarChartRodData(
+            toY: 6,
+            color: AppColors.barColor2,
+            borderRadius: BorderRadius.circular(0),
+          ),
+        ],
+      ),
+      BarChartGroupData(
+        x: 8,
+        barRods: [
+          BarChartRodData(
+            toY: 7,
+            color: AppColors.barColor1,
+            borderRadius: BorderRadius.circular(0),
+          ),
+          BarChartRodData(
+            toY: 8,
+            color: AppColors.barColor2,
+            borderRadius: BorderRadius.circular(0),
+          ),
+        ],
+      ),
+      BarChartGroupData(
+        x: 9,
+        barRods: [
+          BarChartRodData(
+            toY: 5,
+            color: AppColors.barColor1,
+            borderRadius: BorderRadius.circular(0),
+          ),
+          BarChartRodData(
+            toY: 7,
+            color: AppColors.barColor2,
+            borderRadius: BorderRadius.circular(0),
+          ),
+        ],
+      ),
+      BarChartGroupData(
+        x: 10,
+        barRods: [
+          BarChartRodData(
+            toY: 4,
+            color: AppColors.barColor1,
+            borderRadius: BorderRadius.circular(0),
+          ),
+          BarChartRodData(
+            toY: 6,
+            color: AppColors.barColor2,
+            borderRadius: BorderRadius.circular(0),
+          ),
+        ],
+      ),
+      // Add more BarChartGroupData if needed
+    ];
+
+    const int visibleGroupCount = 7;
+    const double groupWidth = 50.0;
+
     return Padding(
       padding: const EdgeInsets.all(15.0),
-      child: SizedBox.expand(
-        child: BarChart(
-          BarChartData(
-            borderData: FlBorderData(
-              border: Border(
-                top: BorderSide(color: AppColors.texthint, width: 1),
-                right: BorderSide(color: AppColors.texthint, width: 1),
-                left: BorderSide(color: AppColors.texthint, width: 1),
-                bottom: BorderSide(color: AppColors.texthint, width: 1),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: SizedBox(
+          width: barGroups.length * groupWidth,
+          height: 300, // Adjust the height as needed
+          child: BarChart(
+            BarChartData(
+              borderData: FlBorderData(show: false),
+              gridData: FlGridData(
+                drawHorizontalLine: false,
+                drawVerticalLine: false,
               ),
+              barGroups: barGroups,
+              titlesData: FlTitlesData(show: false),
             ),
-            gridData: FlGridData(
-              drawHorizontalLine: true,
-              drawVerticalLine: true,
-              getDrawingHorizontalLine: (value) => FlLine(
-                color: AppColors.texthint, 
-                strokeWidth: 1,
-                dashArray: null, 
-              ),
-              getDrawingVerticalLine: (value) => FlLine(
-                color: AppColors.texthint, 
-                strokeWidth: 1,
-                dashArray: null, 
-              ),
-            ),
-            barGroups: [
-              BarChartGroupData(
-                x: 0,
-                barRods: [
-                  BarChartRodData(
-                    toY: 8,
-                    color: AppColors.barColor1,
-                    borderRadius: BorderRadius.circular(0),
-                  ),
-                  BarChartRodData(
-                    toY: 6,
-                    color: AppColors.barColor2,
-                    borderRadius: BorderRadius.circular(0),
-                  ),
-                ],
-              ),
-              BarChartGroupData(
-                x: 2,
-                barRods: [
-                  BarChartRodData(
-                    toY: 5,
-                    color: AppColors.barColor1,
-                    borderRadius: BorderRadius.circular(0),
-                  ),
-                  BarChartRodData(
-                    toY: 8,
-                    color: AppColors.barColor2,
-                    borderRadius: BorderRadius.circular(0),
-                  ),
-                ],
-              ),
-              BarChartGroupData(
-                x: 2,
-                barRods: [
-                  BarChartRodData(
-                    toY: 3,
-                    color: AppColors.barColor1,
-                    borderRadius: BorderRadius.circular(0),
-                  ),
-                  BarChartRodData(
-                    toY: 4,
-                    color: AppColors.barColor2,
-                    borderRadius: BorderRadius.circular(0),
-                  ),
-                ],
-              ),
-              BarChartGroupData(
-                x: 3,
-                barRods: [
-                  BarChartRodData(
-                    toY: 7,
-                    color: AppColors.barColor1,
-                    borderRadius: BorderRadius.circular(0),
-                  ),
-                  BarChartRodData(
-                    toY: 4,
-                    color: AppColors.barColor2,
-                    borderRadius: BorderRadius.circular(0),
-                  ),
-                ],
-              ),
-            ],
-            titlesData: FlTitlesData(show: false),
           ),
         ),
       ),

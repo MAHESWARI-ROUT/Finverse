@@ -1,7 +1,7 @@
 import 'package:finverse/common/app_colors.dart';
 import 'package:finverse/common/device_utilities.dart';
 import 'package:finverse/common/fonts.dart';
-import 'package:finverse/models/app_title.dart';
+import 'package:finverse/widgets/app_title.dart';
 import 'package:finverse/widgets/circular_container.dart';
 import 'package:finverse/widgets/completion_chart.dart';
 import 'package:finverse/widgets/learning_progress_chart.dart';
@@ -47,7 +47,7 @@ class AnalyticsView extends StatelessWidget {
                   SizedBox(
                     width: 155,
                     child: Card(
-                      elevation: 4,
+                      elevation: 0,
                       child: CircularContainer(
                         radius: 12,
                         height: 130,
@@ -77,7 +77,7 @@ class AnalyticsView extends StatelessWidget {
                   SizedBox(
                     width: 155,
                     child: Card(
-                      elevation: 4,
+                      elevation: 0,
                       child: CircularContainer(
                         radius: 12,
                         height: 130,
@@ -107,7 +107,7 @@ class AnalyticsView extends StatelessWidget {
               ),
               SizedBox(height: 20),
               Card(
-                elevation: 4,
+                elevation: 0,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
@@ -168,7 +168,7 @@ class AnalyticsView extends StatelessWidget {
               ),
               SizedBox(height: 20),
               Card(
-                elevation: 4,
+                elevation: 0,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
